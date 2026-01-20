@@ -1,16 +1,9 @@
 # CoPE vs RoPE: 上下文位置编码的对决
 
-[![Paper](https://img.shields.io/badge/Paper-Arxiv:2405.18719
-        
-        
-        
-        
-        
-        -blue.svg)](https://arxiv.org/abs/2405.18719
-        
-        )
+[![Paper](https://img.shields.io/badge/Paper-Arxiv:2405.18719-blue.svg)](https://arxiv.org/abs/2405.18719)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/get-started/locally/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 
 本项目是对 Meta AI 2024 年论文 **《Contextual Position Encoding: Learning to Count What’s Important》** 的深度技术复现与评估。我们通过高难度的“选择性计数任务”，对比了 **CoPE** (Contextual Position Encoding) 与主流的 **RoPE** (Rotary Position Embedding) 在逻辑拟合与长度外推上的表现。
 
@@ -57,7 +50,7 @@ CoPE 学习到了动态的门控逻辑：它会主动关注指令区，并尝试
 
 ---
 
-## �️ 项目结构与运行
+## 项目结构与运行
 
 ### 环境准备
 ```bash
