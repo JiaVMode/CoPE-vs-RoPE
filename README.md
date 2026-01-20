@@ -1,6 +1,14 @@
 # CoPE vs RoPE: 上下文位置编码的对决
 
-[![Paper](https://img.shields.io/badge/Paper-Arxiv:2405.18719-blue.svg)](https://arxiv.org/abs/2405.18719)
+[![Paper](https://img.shields.io/badge/Paper-Arxiv:2405.18719
+        
+        
+        
+        
+        
+        -blue.svg)](https://arxiv.org/abs/2405.18719
+        
+        )
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/get-started/locally/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -29,8 +37,8 @@ RoPE 通过在复数空间旋转向量来捕捉相对位置。它在现代 LLM�
 
 | 模型 | 1024 (In-Domain) | 2048 (Extrapolation) | 计算开销 |
 | :--- | :--- | :--- | :--- |
-| **RoPE (Aligned)** | 93.20% | 45.20% (Fail) | 低 ($O(T)$) |
-| **CoPE (Paper Ver)** | **94.80%** | **45.60% (Fail)** | 高 ($O(T^2)$) |
+| **RoPE (Aligned)** | 93.20% | 45.20% (Fail) | 低 ($$O(T)$$) |
+| **CoPE (Paper Ver)** | **94.80%** | **45.60% (Fail)** | 高 ($$O(T^2)$$) |
 
 > [!NOTE]
 > **结论**: 在论文原版实现下，CoPE 在处理复杂逻辑时具有更强的拟合能力（反超 RoPE），但目前的零样本外推（Zero-shot Extrapolation）对两者而言依然是巨大挑战。
