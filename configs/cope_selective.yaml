@@ -1,0 +1,50 @@
+# ==========================================
+# 实验配置 (Experiment Configuration)
+# ==========================================
+experiment:
+  name: "cope_selective_hard"       # 实验名称
+  seed: 42                          # 随机种子
+  out_dir: "outputs/cope_selective" # 输出目录
+
+# ==========================================
+# 数据配置 (Data Configuration)
+# ==========================================
+data:
+  mode: "selective"                 # 任务模式：选择性计数
+  vocab_size: 5000                  # 词表大小
+  seq_len: 1024                     # 序列长度
+  
+  # 高难度模式参数
+  hard_mode_kwargs:
+    min_directives: 1               # 最少统计对象数
+    max_directives: 2               # 最多统计对象数
+
+# ==========================================
+# 模型配置 (Model Configuration)
+# ==========================================
+model:
+  type: "gpt"                       # 模型架构
+  n_layer: 12                       # 层数
+  n_head: 8                         # 头的数量
+  n_embd: 512                       # 隐藏层维度
+  block_size: 1024                  # 最大上下文长度
+  
+  # 位置编码配置
+  position_encoding:
+    type: "cope"                    # 使用 CoPE (上下文位置编码)
+    
+    # CoPE 特有参数
+    cope_args:
+      npos_max: 1024                # CoPE 允许的最大相对位置 (通常等于 seq_len)
+
+# ==========================================
+# 训练配置 (Training Configuration)
+# ==========================================
+train:
+  batch_size: 4                     # 批次大小 (显存敏感)
+  max_steps: 1000                   # 最大训练步数
+  lr: 3.0e-4                        # 学习率
+  log_interval: 50                  # 日志频率
+  eval_interval: 200                # 验证频率
+  device: "cuda"                    # 设备
+  distributed: false                # 分布式标志
